@@ -4,9 +4,11 @@ import { render } from 'react-dom';
 class Box extends React.Component {
   render() {
     return (
-      <div className="Box">
-        <h1 className="XO"> {this.props.text} </h1>
-      </div>
+      // <div className="Box">
+      <button className="XO" onClick={this.props.onClick}>
+        {this.props.button}
+      </button>
+      // </div>
     );
   }
 }
