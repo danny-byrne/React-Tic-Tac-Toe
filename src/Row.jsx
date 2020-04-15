@@ -1,17 +1,18 @@
-import React, { Component } from 'react';
-import { render } from 'react-dom';
+import React from 'react';
 import Box from './Box.jsx';
 
-class Row extends React.Component {
-  render() {
-    return (
-      <div className="Row">
-        <Box button={this.props.button} onClick={this.props.onClick} />
-        <Box button={this.props.button} onClick={this.props.onClick} />
-        <Box button={this.props.button} onClick={this.props.onClick} />
-      </div>
-    );
-  }
+function Row(props) {
+  const row = props.row.map((button, i) =>
+    <Box key={`row${row}col${i}`} val={button} row={props.curRow} col={i} onClick={(e) => props.onClick(props.curRow, i)} />
+  );
+
+
+  return (
+    <div className="Row">
+      {row}
+    </div>
+  );
+
 }
 
 export default Row;

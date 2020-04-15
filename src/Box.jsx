@@ -1,16 +1,14 @@
-import React, { Component } from 'react';
-import { render } from 'react-dom';
+import React from 'react';
 
-class Box extends React.Component {
-  render() {
-    return (
-      // <div className="Box">
-      <button className="XO" onClick={this.props.onClick}>
-        {this.props.button}
-      </button>
-      // </div>
-    );
-  }
+
+function Box(props) {
+  return (
+    // <div className="Box">
+    <button col={props.col} row={props.row} className="XO" onClick={props.onClick}>
+      {props.val}
+    </button>
+    //</div>
+  );
 }
 
 export default Box;
